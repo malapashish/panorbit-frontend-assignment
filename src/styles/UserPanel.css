@@ -1,0 +1,119 @@
+.parent-container {
+  height: 100vh; /* Or you can set this to any height you want */
+  padding: 32px !important;
+}
+
+.row.h-100 {
+  min-height: 100%;
+}
+
+.col-md-2.h-100 {
+  min-height: 100%;
+}
+
+.side-nav-bar {
+  border-radius: 28px;
+  background: linear-gradient(to bottom, #3a59c8, #4a4cc8, #5d3bc8) !important;
+  padding: 16px !important;
+}
+
+.nav-link {
+  color: #fff !important;
+  text-align: left !important;
+  border-bottom: 1px solid #f6f6f6 !important;
+  padding-bottom: 12px !important;
+}
+
+.nav-link:last-child {
+  border-bottom: none;
+}
+
+.nav-item.position-relative {
+  overflow: visible;
+}
+
+.nav-link,
+.nav-link.active::before {
+  transition: all 0.3s ease;
+}
+
+.nav-link.active::before {
+  content: ">";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  background-color: #fff;
+  color: #c7cedb;
+  font-size: 10px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.panel-child-container {
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+}
+
+.no-caret::after {
+  display: none !important;
+}
+
+.dropdown-menu {
+  border-radius: 24px !important;
+}
+
+.dropdown-inner-container {
+  /* height: 100%; */
+  height: 200px;
+  overflow-y: auto;
+}
+
+.dropdown-inner-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.dropdown-inner-container::-webkit-scrollbar-thumb {
+  background-color: #dfdfdf;
+  border-radius: 20px;
+}
+
+.dropdown-profile-container {
+  height: calc(100% - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown-profile-container.title {
+  margin-top: 8px;
+  font-weight: 400;
+  color: #696969;
+}
+
+.dropdown-profile-container.email {
+  margin-top: 8px;
+  font-weight: 200 !important;
+  color: #696969;
+}
+
+.dropdown-footer {
+  padding: 10px;
+  background: #f2f2f2;
+  text-align: center; /* Center the button */
+}
+
+.dropdown-item:focus,
+.dropdown-item:active {
+  background-color: transparent !important;
+}

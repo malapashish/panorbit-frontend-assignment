@@ -3,16 +3,14 @@ import axios from "axios";
 import { API_ENDPOINTS } from "../apis";
 import "../styles/Homepage.css";
 import { UserModal, UserModalTypes } from "../components";
-
-/**
- * TODO:
- * 1. Add a simple modal component and api call.
- * 2. Style the modal.
- * 3. Add the react loader skeleton.
- */
+import { useUsers } from "../context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 export const HomePage = () => {
-  const [user, setUsers] = useState();
+  const [userState, setUsersState] = useState();
+  const [loading, setLoading] = useState(true);
+  const { setSelectedUser, setUsers } = useUsers();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -20,6 +18,8 @@ export const HomePage = () => {
       const {
         data: { users },
       } = response;
+      setUsersState(users);
+      setLoading(false);
       setUsers(users);
     };
 
@@ -32,11 +32,17 @@ export const HomePage = () => {
 
   const onSelectUser = (user: UserModalTypes.User) => {
     console.log("User", user);
+    setSelectedUser(user);
+    navigate(`/user/${user.id}/profile`);
   };
 
   return (
     <div className="wavy-background">
-      {user ? <UserModal users={user} onSelectUser={onSelectUser} /> : <></>}
+      <UserModal
+        loading={loading}
+        users={userState}
+        onSelectUser={onSelectUser}
+      />
     </div>
   );
 };

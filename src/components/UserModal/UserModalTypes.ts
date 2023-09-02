@@ -1,7 +1,8 @@
 export namespace UserModalTypes {
   export interface UserModalProps {
-    users: User[];
+    users: User[] | undefined;
     onSelectUser: (user: User) => void;
+    loading: boolean;
   }
   export interface User {
     id: number;
