@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router";
 import { HomePage } from "./pages";
 import { UserProvider } from "./context/UserContext";
 import { UserPanel } from "./components/UserPanel/UserPanel";
+import { ComingSoonScreen } from "./components";
 
 function App() {
   return (
@@ -15,18 +16,9 @@ function App() {
               path="/user/:id/profile"
               element={<h1>This is profile section</h1>}
             />
-            <Route
-              path="/user/:id/posts"
-              element={<h1>This is posts section</h1>}
-            />
-            <Route
-              path="/user/:id/gallery"
-              element={<h1>This is gallery section</h1>}
-            />
-            <Route
-              path="/user/:id/todo"
-              element={<h1>This is todo section</h1>}
-            />
+            <Route path="/user/:id/posts" element={<ComingSoonScreen />} />
+            <Route path="/user/:id/gallery" element={<ComingSoonScreen />} />
+            <Route path="/user/:id/todo" element={<ComingSoonScreen />} />
           </Route>
         </Routes>
       </UserProvider>

@@ -117,3 +117,9 @@
 .dropdown-item:active {
   background-color: transparent !important;
 }
+
+.coming-soon-text {
+  font-size: 62px;
+  font-weight: 700;
+  color: #eeeeee;
+}

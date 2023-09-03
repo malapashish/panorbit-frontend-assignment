@@ -5,14 +5,6 @@ import "../../styles/UserPanel.css";
 import { useUsers } from "../../context/UserContext";
 import { UserModalTypes } from "../UserModal";
 
-/**
- * TODO:
- * 1. Add sidebar
- * 2. Add Topbar
- * 3. Add current link handling
- * 4. Add navigate in user dropdown
- */
-
 export const UserPanel = () => {
   const location = useLocation();
   console.log("Location", location);
